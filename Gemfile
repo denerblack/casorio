@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -21,6 +21,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
+gem 'pg'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -38,6 +39,7 @@ end
 
 gem "rspec-rails", :group => [:test, :development]
 group :test, :development do
+  gem 'sqlite3'
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
