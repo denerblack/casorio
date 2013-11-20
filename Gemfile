@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'twitter-bootswatch-rails', '~> 3.0.1'
 
 gem 'pg'
 
