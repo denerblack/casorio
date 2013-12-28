@@ -24,6 +24,7 @@ gem 'coffee-rails', '~> 4.0.0'
   #gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
   #                                :github => 'anjlab/bootstrap-rails'
   gem 'twitter-bootswatch-rails', '~> 3.0.1'
+  gem 'twitter-bootswatch-rails-fontawesome', '~> 4.0'
   gem 'twitter-bootswatch-rails-helpers'
 #end
 
