@@ -17,7 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-group :assets do
+#group :assets do
   gem 'therubyracer', platforms: :ruby
   gem 'less-rails'
   gem 'twitter-bootstrap-rails'
@@ -25,10 +25,10 @@ group :assets do
   #                                :github => 'anjlab/bootstrap-rails'
   gem 'twitter-bootswatch-rails', '~> 3.0.1'
   gem 'twitter-bootswatch-rails-helpers'
-end
-gem 'pg'
+#end
 
 group :production do
+  gem 'pg'
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
   gem 'unicorn'
