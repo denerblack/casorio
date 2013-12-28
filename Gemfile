@@ -17,16 +17,21 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
-gem 'twitter-bootswatch-rails', '~> 3.0.1'
-
+group :assets do
+  gem 'therubyracer', platforms: :ruby
+  gem 'less-rails'
+  gem 'twitter-bootstrap-rails'
+  #gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+  #                                :github => 'anjlab/bootstrap-rails'
+  gem 'twitter-bootswatch-rails', '~> 3.0.1'
+  gem 'twitter-bootswatch-rails-helpers'
+end
 gem 'pg'
 
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+  gem 'unicorn'
 end
 
 # Use jquery as the JavaScript library
