@@ -58,7 +58,7 @@ group :test, :development do
   gem "database_cleaner", "1.0.1"
   gem "simplecov"
 end
-
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
