@@ -39,7 +39,7 @@
     <th/>
     <tr>
       <td/>
-        <td colspan=2> <%=t('.total') %> <%= @guests.count + @guests.map(&:companions_amount).sum%></td>
+      <td colspan=2> <%="#{t('.total') + ": " +(@guests.count + @guests.map(&:companions_amount).sum).to_s }"%></td>
         <td/>
         <td/>
     <tr/>

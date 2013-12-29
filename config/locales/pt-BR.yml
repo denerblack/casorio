@@ -226,3 +226,6 @@ pt-BR:
         name: "Nome"
         companions_amount: "Quantidade de Acompanhantes"
         confirmed: "Confirmado"
+  guests:
+    index:
+      total: Total
