@@ -142,7 +142,8 @@ pt-BR:
       new: Novo
       cancel: Cancelar
     titles:
-      new: 'Novo %{model} '    
+      new: 'Novo %{model} ' 
+      edit: 'Editar %{model}'   
   number:
     currency:
       format:
@@ -219,13 +220,33 @@ pt-BR:
       <<: *errors
     models:
       guest:
-        one: "Convidado"
-        other: "Convidados"
+        one: Convidado
+        other: Convidados
+      expense:
+        one: Despesa
+        other: Despesas
     attributes:
       guest:
         name: "Nome"
         companions_amount: "Quantidade de Acompanhantes"
         confirmed: "Confirmado"
+      expense:
+        name: "Nome"
+        amount: Quantidade
+        unit_value: Valor Unitário
+        unit: Unidade
+
   guests:
     index:
       total: Total
+  expenses:
+    edit:
+      select: Selecione
+  Kilo: Quilo
+  Person: Pessoa
+  Packet: Maço
+  Box: Caixa
+  Liter: Litro
+  Cow: Vaca
+  select: Selecione
+      

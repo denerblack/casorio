@@ -1,4 +1,6 @@
 Casorio::Application.routes.draw do
+  resources :expenses
+
   devise_for :admins
   devise_for :users
   #devise_for :users
