@@ -1,4 +1,6 @@
 Casorio::Application.routes.draw do
+  resources :gift_lists
+
   resources :expenses
 
   devise_for :admins

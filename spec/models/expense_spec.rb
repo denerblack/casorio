@@ -6,7 +6,5 @@ describe Expense do
       expense = FactoryGirl.create(:expense)
       expense.total.should eql 2400
     end
-
   end
-
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230190935) do
+ActiveRecord::Schema.define(version: 20140102000946) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 20131230190935) do
     t.integer  "amount"
     t.float    "unit_value"
     t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gift_lists", force: true do |t|
+    t.string   "name"
+    t.string   "brand"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

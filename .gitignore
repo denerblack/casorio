@@ -14,3 +14,21 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+.DS_Store
+config/.DS_Store
+config/locales/.DS_Store
+public/.DS_Store
+public/assets/.DS_Store
+public/assets/application-06c237348675dfd454689bde0e1a738b.css
+public/assets/application-06c237348675dfd454689bde0e1a738b54689bde0e1a738b.css.gz
+public/assets/application-06c237348675dfd454689bde0e1a738b.css.gz
+public/assets/application-32f23ac35bf1d4a12c55656dc3d17b2c.css
+public/assets/application-32f23ac35bf1d4a12c55656dc3d17b2c.css.gz
+public/assets/application-32f23ac35bf1d4a12c55656dc3d17b2c3d17b2c.css.gz
+public/assets/application-d2989eb57fec1ae7ec5e3e3ff05eb88e.js
+public/assets/application-d2989eb57fec1ae7ec5e3e3ff05eb88e.js.gz
+public/assets/fontawesome/
+public/assets/javascripts/
+public/assets/twitter/
+vendor/vendor

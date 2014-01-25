@@ -28,11 +28,11 @@ gem 'coffee-rails', '~> 4.0.0'
   gem 'twitter-bootswatch-rails-helpers'
 #end
 
-group :production do
-  gem 'pg'
-  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
-end
+#group :production do
+#  gem 'pg'
+#  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+#  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+#end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -67,6 +67,8 @@ gem 'devise'
 # Use unicorn as the app server
 gem 'unicorn'
 gem 'unicorn-worker-killer'
+gem 'rest-client'
+gem 'xml-simple'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
