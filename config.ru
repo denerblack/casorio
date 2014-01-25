@@ -1,7 +1,8 @@
 # This file is used by Rack-based servers to start the application.
 
 if ENV['RAILS_ENV'] == 'production' 
-  require 'unicorn/worker_killer'
+  require 'unicorn'
+	require 'unicorn/worker_killer'
 
   max_request_min =  500
   max_request_max =  600
