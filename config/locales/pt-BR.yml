@@ -250,4 +250,8 @@ pt-BR:
   Liter: Litro
   Cow: Vaca
   select: Selecione
-      
+  layouts:
+    cerulean:
+      guest: Convidado
+      expense: Despesa
+      preparation: Preparativo
