@@ -32,3 +32,4 @@ public/assets/fontawesome/
 public/assets/javascripts/
 public/assets/twitter/
 vendor/vendor
+Gemfile.lock
