@@ -239,6 +239,7 @@ pt-BR:
   guests:
     index:
       total: Total
+      confirmed: Confirmado
   expenses:
     edit:
       select: Selecione
