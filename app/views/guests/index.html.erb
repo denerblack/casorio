@@ -47,6 +47,6 @@
   </tfoot>
 </table>
 <%= link_to t('.new', :default => t("helpers.links.new")),
-<%= will_paginate @guests, renderer: BootstrapPagination::Rails %>
             new_guest_path,
             :class => 'btn btn-primary' %>
+<%= will_paginate @guests, renderer: BootstrapPagination::Rails %>
