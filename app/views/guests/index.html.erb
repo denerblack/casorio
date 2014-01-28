@@ -39,14 +39,14 @@
     <th/>
     <tr>
       <td/>
-      <td colspan=2> <%="#{t('.total') + ": " +(Guest.all.count + Guest.all.map(&:companions_amount).sum).to_s }"%></td>
-      <td colspan=2> <%="#{t('.confirmed').pluralize + ": " +(Guest.where(confirmed: true).count + Guest.all.inject(0){|sum, guest| guest.confirmed ? sum + guest.companions_amount : sum }).to_s }"%></td>
+      <td> <%="#{t('.total') + ": " +(Guest.all.count + Guest.all.map(&:companions_amount).sum).to_s }"%></td>
+      <td> <%="#{t('.confirmed').pluralize + ": " +(Guest.where(confirmed: true).count + Guest.all.inject(0){|sum, guest| guest.confirmed ? sum + guest.companions_amount : sum }).to_s }"%></td>
         <td/>
         <td/>
     <tr/>
   </tfoot>
 </table>
-<%= will_paginate @guests, renderer: BootstrapPagination::Rails %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
+<%= will_paginate @guests, renderer: BootstrapPagination::Rails %>
             new_guest_path,
             :class => 'btn btn-primary' %>
