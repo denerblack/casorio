@@ -10,6 +10,8 @@
     <div class="controls">
       <%= f.select :unit, options_for_select(I18n.t(Expense::UNITIES), selected: @expense.unit), {include_blank: t('select') },{include_blank: t('.select'), :class => 'text_field'} %>
     </div>
+  </div>
+
   <div class="control-group">
     <%= f.label :amount, :class => 'control-label' %>
     <div class="controls">
