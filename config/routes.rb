@@ -9,7 +9,7 @@ Casorio::Application.routes.draw do
   #devise_for :users
   resources :guests
 
-  root :to => "guests#index"
+  root :to => "dashboard#index"
 	get 'dashboard' => 'dashboard#index'
 
 

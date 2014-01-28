@@ -71,7 +71,7 @@ gem 'rest-client'
 gem 'xml-simple'
 
 
-gem 'dashing-rails'
+gem 'chartkick'
 
 
 # Use Capistrano for deployment
