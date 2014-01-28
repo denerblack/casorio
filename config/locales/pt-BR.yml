@@ -229,6 +229,7 @@ pt-BR:
       guest:
         name: "Nome"
         companions_amount: "Quantidade de Acompanhantes"
+        children_amount: "Quantidade de Crianças"
         confirmed: "Confirmado"
       expense:
         name: "Nome"
