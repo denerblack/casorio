@@ -6,6 +6,7 @@ class GuestsController < ApplicationController
   # GET /guests.json
   def index
 		@guests = Guest.paginate(:page => params[:page], :per_page => 15)
+		puts current_user.id
   end
 
   # GET /guests/1
@@ -15,7 +16,7 @@ class GuestsController < ApplicationController
 
   # GET /guests/new
   def new
-    @guest = Guest.new
+    @guest = Guest.new(user_id: current_user)
   end
 
   # GET /guests/1/edit

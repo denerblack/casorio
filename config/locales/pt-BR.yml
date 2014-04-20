@@ -142,8 +142,8 @@ pt-BR:
       new: Novo
       cancel: Cancelar
     titles:
-      new: 'Novo %{model} ' 
-      edit: 'Editar %{model}'   
+      new: 'Novo %{model} '
+      edit: 'Editar %{model}'
   number:
     currency:
       format:
@@ -222,6 +222,9 @@ pt-BR:
       guest:
         one: Convidado
         other: Convidados
+      gift_list:
+        one: Presente
+        other: Presentes
       expense:
         one: Despesa
         other: Despesas
@@ -231,12 +234,22 @@ pt-BR:
         companions_amount: "Quantidade de Acompanhantes"
         children_amount: "Quantidade de Crianças"
         confirmed: "Confirmado"
+        user_id: Usuário
+        phone_number: Telefone
       expense:
-        name: "Nome"
+        name: Nome
         amount: Quantidade
         unit_value: Valor Unitário
         unit: Unidade
-
+      event:
+        name: Nome
+        description: Descrição
+        address: Endereço
+        date: Data
+      gift_list:
+        name: Nome
+        brand: Marca
+        where: Onde
   guests:
     index:
       total: Total
@@ -244,6 +257,12 @@ pt-BR:
   expenses:
     edit:
       select: Selecione
+  events:
+    show:
+      gift_lists: Presentes
+  gift_lists:
+    index:
+      where: Onde
   Kilo: Quilo
   Person: Pessoa
   Packet: Maço
@@ -256,3 +275,4 @@ pt-BR:
       guest: Convidado
       expense: Despesa
       preparation: Preparativo
+      gift_list: Presente

@@ -1,0 +1,40 @@
+<%- model_class = Event -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.id %></td>
+        <td><%= event.name %></td>
+        <td><%= event.description %></td>
+        <td><%= event.address %></td>
+        <td><%= event.date.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to t('.show', :default => t("helpers.links.show")), event, class: 'btn btn-default btn-xs'  %>
+        <%= link_to t('.show', :default => t("helpers.links.edit")), edit_event_path(event), class: 'btn btn-primary btn-xs'  %>
+        <%= link_to t('.show', :default => t("helpers.links.destroy")), event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_event_path,
+            :class => 'btn btn-primary' %>

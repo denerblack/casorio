@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128153628) do
+ActiveRecord::Schema.define(version: 20140420221632) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20140128153628) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "address"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "expenses", force: true do |t|
     t.string   "name"
     t.integer  "amount"
@@ -46,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140128153628) do
     t.string   "brand"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "event_id"
   end
 
   create_table "guests", force: true do |t|
@@ -55,6 +65,8 @@ ActiveRecord::Schema.define(version: 20140128153628) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "children_amount"
+    t.integer  "user_id"
+    t.string   "phone_number"
   end
 
   create_table "users", force: true do |t|
@@ -69,6 +81,8 @@ ActiveRecord::Schema.define(version: 20140128153628) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "admin",                  default: false
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

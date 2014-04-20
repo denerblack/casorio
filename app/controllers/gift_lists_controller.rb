@@ -1,5 +1,6 @@
 class GiftListsController < ApplicationController
   before_action :set_gift_list, only: [:show, :edit, :update, :destroy]
+	before_action :set_event, only: [:index, :new, :edit, :show]
 
   # GET /gift_lists
   # GET /gift_lists.json
@@ -19,6 +20,7 @@ class GiftListsController < ApplicationController
 
   # GET /gift_lists/1/edit
   def edit
+		puts params
   end
 
   # POST /gift_lists
@@ -69,6 +71,10 @@ class GiftListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gift_list_params
-      params.require(:gift_list).permit(:name, :brand)
+      params.require(:gift_list).permit(:name, :brand, :event_id)
     end
+
+		def set_event
+			@event = Event.find params[:event_id]
+		end
 end

@@ -1,6 +1,9 @@
 Casorio::Application.routes.draw do
+  resources :events do
+		resources :gift_lists
+	end
+
   get "dashboard/index"
-  resources :gift_lists
 
   resources :expenses
 
@@ -53,7 +56,7 @@ Casorio::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

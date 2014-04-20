@@ -8,7 +8,6 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:brand) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%= t '.where' %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -16,22 +15,21 @@
   <tbody>
     <% @gift_lists.each do |gift_list| %>
       <tr>
-        <td><%= link_to gift_list.id, gift_list_path(gift_list) %></td>
+        <td><%= link_to gift_list.id, event_gift_list_path(@event, gift_list) %></td>
         <td><%= gift_list.name %></td>
         <td><%= gift_list.brand %></td>
-        <td><%=l gift_list.created_at %></td>
         <td>
-          <% gift_list.buscape_info.each do |product| %>
-            <%=product.name %> <br/>
-            <%=image_tag product.image, size: "50x50"%><br/>
-            <%= "#{('R$ ' + product.minimum_price) unless product.minimum_price.nil? }"%><br/>
-          <%end%>
+          <% #gift_list.buscape_info.each do |product| %>
+            <%#=product.name %>
+            <%#=image_tag product.image, size: "50x50"%>
+            <%#= "#{('R$ ' + product.minimum_price) unless product.minimum_price.nil? }"%>
+          <%#end%>
         </td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_gift_list_path(gift_list), :class => 'btn btn-mini' %>
+                      edit_event_gift_list_path(@event, gift_list), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      gift_list_path(gift_list),
+                      event_gift_list_path(@event, gift_list),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -42,5 +40,8 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_gift_list_path,
+            new_event_gift_list_path,
             :class => 'btn btn-primary' %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+            events_path,
+            :class => 'btn btn-default' %>
