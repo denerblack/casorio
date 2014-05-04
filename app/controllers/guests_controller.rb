@@ -5,8 +5,7 @@ class GuestsController < ApplicationController
   # GET /guests
   # GET /guests.json
   def index
-		@guests = Guest.paginate(:page => params[:page], :per_page => 15)
-		puts current_user.id
+		@guests = Guest.page(params[:page]).per(10)
   end
 
   # GET /guests/1
