@@ -72,7 +72,6 @@ gem 'xml-simple'
 
 
 gem 'chartkick'
-gem 'will_paginate-bootstrap'
 gem 'kaminari'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
