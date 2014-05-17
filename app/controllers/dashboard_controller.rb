@@ -1,7 +1,9 @@
 class DashboardController < ApplicationController
-  def index
+#  layout "application"
+	def index
 		@guests_count = Guest.group("name").count
 		@guests = Guest.all
-		@expenses = Expense.all	
+		@expenses = Expense.all
+		@events = Event.all
   end
 end

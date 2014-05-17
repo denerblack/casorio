@@ -20,12 +20,14 @@ gem 'coffee-rails', '~> 4.0.0'
 #group :assets do
   gem 'therubyracer', platforms: :ruby
   gem 'less-rails'
-  gem 'twitter-bootstrap-rails'
+  #gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-sass', '~> 3.1.1'
+  gem "rails-bootstrap-helpers"
   #gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
   #                                :github => 'anjlab/bootstrap-rails'
-  gem 'twitter-bootswatch-rails', '~> 3.0.1'
-  gem 'twitter-bootswatch-rails-fontawesome', '~> 4.0'
-  gem 'twitter-bootswatch-rails-helpers'
+  #gem 'twitter-bootswatch-rails', '~> 3.0.1'
+  #gem 'twitter-bootswatch-rails-fontawesome', '~> 4.0'
+  #gem 'twitter-bootswatch-rails-helpers'
 #end
 
 group :production do

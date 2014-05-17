@@ -10,39 +10,62 @@
 
 <div class="row">
     <div class="col-md-9">
-      	<!-- Right -->      	             
-      	<hr>      
+      	<!-- Right -->
+      	<hr>
 	<div class="row">
-         <div class="col-md-6">
-         <% if user_signed_in? %>
-              <div class="panel panel-default">
-		  <div class="panel-heading"><strong>Despesas</strong></div>
-                  <%=pie_chart @expenses.map {|expense| [expense.name, expense.total]}  %>
-		  <div class="panel-bottom"><h2>Total <%= number_to_currency "#{@expenses.map(&:total).sum}"%></h2></div>
-	  </div><!--/panel-->
-  	<% end %>
+		<div class="col-md-6">
+			<% if user_signed_in? %>
+				<div class="panel panel-default">
+					<div class="panel-heading"><strong>Despesas</strong></div>
+					<%=pie_chart @expenses.map {|expense| [expense.name, expense.total]}  %>
+					<div class="panel-bottom"><h2>Total <%= number_to_currency "#{@expenses.map(&:total).sum}"%></h2></div>
+				</div><!--/panel-->
+			<% end %>
             </div>
-        	<div class="col-md-6">
+    <div class="col-md-6">
 	 	<div class="panel panel-default">
 		  <div class="panel-heading"><strong>Contagem Regressiva</strong></div>
-                  <div class="panel-body">
-                  <script type="text/javascript">
+         <div class="panel-body">
+          <script type="text/javascript">
 
-					today = new Date();
+//					today = new Date();
 
-					BigDay = new Date("October 18, 2014");
-					msPerDay = 24 * 60 * 60 * 1000 ;
-					timeLeft = (BigDay.getTime() - today.getTime());
-					e_daysLeft = timeLeft / msPerDay;
-					daysLeft = Math.floor(e_daysLeft);
-					e_hrsLeft = (e_daysLeft - daysLeft)*24;
-					hrsLeft = Math.floor(e_hrsLeft);
-					minsLeft = Math.floor((e_hrsLeft - hrsLeft)*60);
-					document.write("<h2>Faltam somente</h2><BR> <H4>" + daysLeft + " dias " + hrsLeft +" horas e " + minsLeft + " minutos para o nosso </H4> <h2>CASAMENTO</h2><P>");
-					</script>
-                  </div>
-              	</div>                            	
-              
+//					BigDay = new Date("October 18, 2014");
+//					msPerDay = 24 * 60 * 60 * 1000 ;
+//					timeLeft = (BigDay.getTime() - today.getTime());
+//					e_daysLeft = timeLeft / msPerDay;
+//					daysLeft = Math.floor(e_daysLeft);
+//					e_hrsLeft = (e_daysLeft - daysLeft)*24;
+//					hrsLeft = Math.floor(e_hrsLeft);
+//					minsLeft = Math.floor((e_hrsLeft - hrsLeft)*60);
+//					document.write("<h2>Faltam somente</h2><BR> <H4>" + daysLeft + " dias " + hrsLeft +" horas e " + minsLeft + " minutos para o nosso </H4> <h2>CASAMENTO</h2><P>");
+				</script>
+       </div>
+   	</div>
+	 	<div class="panel panel-default">
+		  <div class="panel-heading"><strong>Presentes</strong></div>
+         <div class="panel-body">
+					 <table class="table table-striped">
+						 <thead>
+							 <tr><th>Evento</th><th>Data</th><th/></tr>
+						</thead>
+						<tbody>
+							<% @events.each do |event| %>
+								<tr>
+									<td> <%=event.name %> </td>
+									<td> <%=event.date %> </td>
+									<td>
+										<%= render partial: "modal_gifts", locals: {event: event} %>
+										<%= link_to "ver Presentes", "", :"data-target" => "#evento#{event.id}", role: "button", :"data-toggle" => "modal"%>
+									</td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+
+       </div>
+   	</div>
+
          <% if user_signed_in? %>
               <div class="panel panel-default">
                   <div class="panel-heading"><strong>Convidados</strong></div>
@@ -51,24 +74,24 @@
                     <tr><th>Total</th><th>Total Confirmados</th></tr></thead>
                   <tbody>
                     <tr>
-                    	<td><%="#{(@guests.count + @guests.map(&:companions_amount).sum).to_s }"%></td>
+                    	<td><%="#{(@guests.count + @guests.map(&:companions_amount).compact.sum).to_s }"%></td>
                     	<td><%="#{(Guest.where(confirmed: true).count + @guests.inject(0){|sum, guest| guest.confirmed ? sum + guest.companions_amount : sum }).to_s }"%></td>
                     </tr>
                   </tbody>
                   </table>
 	  </div><!--/panel-->
-  	<% end %> 
-              
-              
+  	<% end %>
+
+
                	<i class="icon-bar-chart icon-3x"></i>
               	<i class="icon-plus icon-3x"></i>
               	<i class="icon-facebook icon-3x"></i>
               	<i class="icon-beaker icon-3x"></i>
               	<i class="icon-twitter icon-3x"></i>
-              	
-              
+
+
 			</div><!--/col-span-6-->
-     
+
       </div><!--/row-->
   	</div><!--/col-span-9-->
 </div>

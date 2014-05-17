@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap
+//= require bootstrap/modal
 //= require jquery.turbolinks
 //= require turbolinks
-//= require sDashboard/jquery-sDashboard.js
 
