@@ -13,15 +13,15 @@
       	<!-- Right -->
       	<hr>
 	<div class="row">
-		<div class="col-md-6">
-			<% if user_signed_in? %>
+		<% if user_signed_in? %>
+			<div class="col-md-6">
 				<div class="panel panel-default">
 					<div class="panel-heading"><strong>Despesas</strong></div>
 					<%=pie_chart @expenses.map {|expense| [expense.name, expense.total]}  %>
 					<div class="panel-bottom"><h2>Total <%= number_to_currency "#{@expenses.map(&:total).sum}"%></h2></div>
 				</div><!--/panel-->
-			<% end %>
-    </div>
+			</div>
+		<% end %>
     <div class="col-md-6">
 	 	<div class="panel panel-default">
 		  <div class="panel-heading"><strong>Contagem Regressiva</strong></div>
