@@ -9,7 +9,7 @@
 <div class="container">
 
 <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
       	<!-- Right -->
       	<hr>
 	<div class="row">
@@ -21,7 +21,7 @@
 					<div class="panel-bottom"><h2>Total <%= number_to_currency "#{@expenses.map(&:total).sum}"%></h2></div>
 				</div><!--/panel-->
 			<% end %>
-            </div>
+    </div>
     <div class="col-md-6">
 	 	<div class="panel panel-default">
 		  <div class="panel-heading"><strong>Contagem Regressiva</strong></div>
@@ -41,19 +41,22 @@
 					document.write("<h2>Faltam somente</h2><BR> <H4>" + daysLeft + " dias " + hrsLeft +" horas e " + minsLeft + " minutos para o nosso </H4> <h2>CASAMENTO</h2><P>");
 				</script>
        </div>
-   	</div>
+		 </div>
+	 </div>
+    <div class="col-md-6">
 	 	<div class="panel panel-default">
 		  <div class="panel-heading"><strong>Presentes</strong></div>
          <div class="panel-body">
 					 <table class="table table-striped">
 						 <thead>
-							 <tr><th>Evento</th><th>Data</th><th/></tr>
+							 <tr><th>Evento</th><th>Data</th><th>Endereço</td><td/></tr>
 						</thead>
 						<tbody>
 							<% @events.each do |event| %>
 								<tr>
 									<td> <%=event.name %> </td>
-									<td> <%=event.date %> </td>
+									<td> <%=event.date.strftime("%d/%m/%Y") %> </td>
+									<td> <%=event.address %> </td>
 									<td>
 										<%= render partial: "modal_gifts", locals: {event: event} %>
 										<%= link_to "ver Presentes", "", :"data-target" => "#evento#{event.id}", role: "button", :"data-toggle" => "modal", class: "btn btn-primary btn-xs" %>
@@ -64,7 +67,10 @@
 					</table>
 
        </div>
-   	</div>
+		 </div>
+	 </div>
+    <div class="col-md-6">
+
 
          <% if user_signed_in? %>
               <div class="panel panel-default">
@@ -81,7 +87,7 @@
                   </table>
 	  </div><!--/panel-->
   	<% end %>
-
+		</div>
 
                	<i class="icon-bar-chart icon-3x"></i>
               	<i class="icon-plus icon-3x"></i>
