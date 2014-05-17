@@ -56,7 +56,7 @@
 									<td> <%=event.date %> </td>
 									<td>
 										<%= render partial: "modal_gifts", locals: {event: event} %>
-										<%= link_to "ver Presentes", "", :"data-target" => "#evento#{event.id}", role: "button", :"data-toggle" => "modal"%>
+										<%= link_to "ver Presentes", "", :"data-target" => "#evento#{event.id}", role: "button", :"data-toggle" => "modal", class: "btn btn-primary btn-xs" %>
 									</td>
 								</tr>
 							<% end %>
