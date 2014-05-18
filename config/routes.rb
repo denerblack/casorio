@@ -13,7 +13,9 @@ Casorio::Application.routes.draw do
   resources :guests
 
   root :to => "dashboard#index"
-	get 'dashboard' => 'dashboard#index'
+	get 'dashboard' => 'dashboard#index', as: "dashboard"
+	get "dashboard/gifts/:event_id" => "dashboard#gifts", as: "dashboard_gifts"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

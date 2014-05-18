@@ -75,6 +75,7 @@ gem 'xml-simple'
 
 gem 'chartkick'
 gem 'kaminari'
+gem 'time_diff'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

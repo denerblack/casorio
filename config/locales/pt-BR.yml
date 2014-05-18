@@ -141,6 +141,7 @@ pt-BR:
       destroy: Excluir
       new: Novo
       cancel: Cancelar
+      back: Voltar
     titles:
       new: 'Novo %{model} '
       edit: 'Editar %{model}'
@@ -282,3 +283,4 @@ pt-BR:
       next: ">"
       last: ">|"
       first: "|<"
+      truncate: "..."
