@@ -1,6 +1,6 @@
 require 'time_diff'
 class DashboardController < ApplicationController
-#  layout "application"
+ # layout "application"
 
 	def index
 		@guests_count = Guest.group("name").count
