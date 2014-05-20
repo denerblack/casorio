@@ -90,6 +90,7 @@
 								<h3><i class="icon-star"></i> <%=event.name %></h3>
 								<p><%=event.address %>
 								</p>
+								<p><%="Dia #{event.date.strftime("%d/%m/%Y")} " %></p>
 								<%= link_to "Ver lista de presentes", home_gifts_path(event.to_param), class: "" %></p>
 								<a href="#">Como chegar</a>
 							<% end %>
