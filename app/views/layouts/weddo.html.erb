@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Title here -->
+		<title>Your Title</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link rel="shortcut icon" href="#">
+	</head>
+
+	<body>
+		<div class="navbar navbar-default navbar-fixed-top bs-docs-nav" role="banner" id="navbar">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					  <span class="sr-only">Toggle navigation</span>
+					  <span class="icon-bar"></span>
+					  <span class="icon-bar"></span>
+					  <span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Elisa &amp; Dener</a>
+				</div>
+
+				<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+					<ul class="nav navbar-nav navbar-right nav-tabs">
+						<li><a href="#home" class="anchorLink">Home</a></li>
+						<!--li><a href="#about" class="anchorLink">About</a></li-->
+						<li><a href="#wedding" class="anchorLink">Eventos</a></li>
+						<!--li><a href="#photos" class="anchorLink">Fotos</a></li-->
+						<!--li><a href="#rsvp" class="anchorLink">RSVP</a></li -->
+					</ul>
+				</nav>
+
+
+			</div>
+		</div>	
+		<%= yield %>
+		<!--Footer Starts -->
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="copy">
+                     <!-- This theme comes with Creative Commons Attribution 3.0 Unported license. So you should not remove the footer link. -->
+								Copyright 2013 &copy; <a href="http://responsivewebinc.com/bootstrap-themes">Bootstrap Themes</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--Footer Ends -->
+		<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span>		
+	</body>
+</html>

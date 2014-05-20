@@ -12,9 +12,11 @@ Casorio::Application.routes.draw do
   #devise_for :users
   resources :guests
 
-  root :to => "dashboard#index"
+  root :to => "home#index"
 	get 'dashboard' => 'dashboard#index', as: "dashboard"
 	get "dashboard/gifts/:event_id" => "dashboard#gifts", as: "dashboard_gifts"
+	get 'home' => 'home#index', as: "home"
+	get "home/gifts/:event_id" => "home#gifts", as: "home_gifts"
 
 
 

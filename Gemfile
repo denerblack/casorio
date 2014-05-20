@@ -81,3 +81,5 @@ gem 'time_diff'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem "font-awesome-rails"
+gem 'flexslider'
