@@ -20,5 +20,6 @@ module Casorio
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = "pt-BR"
 		config.autoload_paths += %W(#{config.root}/lib)
+		config.paths['app/views'] << "app/views/devise"
   end
 end
