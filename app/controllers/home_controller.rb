@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def gifts
-		@gifts = GiftList.where(event_id: params[:event_id]).page(params[:page]).per(50)
+		@gifts = GiftList.where(event_id: params[:event_id]).page(params[:page]).per(20)
 		@event = Event.find(params[:event_id])
   end
 
