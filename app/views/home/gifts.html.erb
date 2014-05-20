@@ -1,6 +1,8 @@
 <%- model_class = GiftList -%>
 <div class="page-header">
-	<h1><%=t '.title', :default => model_class.model_name.human.pluralize %> <%= @event.name %></h1>
+	<div class="title">
+	<h3><%=t '.title', :default => model_class.model_name.human.pluralize %> <%= @event.name %></h3>
+</div>
 </div>
 <table class="table table-striped">
 	<thead>
@@ -9,9 +11,11 @@
 		<tr>
 	</thead>
 	<tbody>
-		<% @gifts.each do |gift|  %>
+		<% @gifts.in_groups(10, false) do |group|  %>
 			<tr>
+		<% group.each do |gift|  %>
 				<td> <%= gift.name %> </td>
+		<% end %>
 			</tr>
 		<% end %>
 	</tbody>
