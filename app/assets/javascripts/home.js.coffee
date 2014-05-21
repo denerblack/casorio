@@ -4,3 +4,10 @@
 
 $ ->
   console.log("DSFSDFDSFDSFDSFDSZFEWS")
+
+$(document).on "change", ".checked", ->
+  $this = $(this)
+  $.ajax({
+    url: $(this).attr('url'),
+    data: { mandatory: $(this).is(':checked'), field_form_id: $(this).attr('gift_list_id') }
+  })

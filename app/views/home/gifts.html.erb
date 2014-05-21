@@ -15,6 +15,15 @@
 			<tr>
 		<% group.each do |gift|  %>
 				<td> <%= gift.name %> </td>
+				<td> <%= check_box_tag gift.checked %>
+				<%= check_box("gift_list", "checked",
+				{
+          :checked => gift.checked,
+					:class => "checked",
+					:gift_list_id => gift.id,
+					:url => update_checked_gift_list_path(gift_list_id: gift.id)
+
+				}) %></td>
 		<% end %>
 			</tr>
 		<% end %>
