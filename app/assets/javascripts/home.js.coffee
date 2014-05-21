@@ -3,11 +3,14 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  console.log("DSFSDFDSFDSFDSFDSZFEWS")
+  $('.checked').each ->
+    if $(this).attr('checked') == 'checked'
+      $(this).attr('disabled', true)
 
 $(document).on "change", ".checked", ->
   $this = $(this)
   $.ajax({
     url: $(this).attr('url'),
-    data: { mandatory: $(this).is(':checked'), field_form_id: $(this).attr('gift_list_id') }
+    data: { checked: $(this).is(':checked'), gift_list_id: $(this).attr('gift_list_id') }
   })
+  $this.attr('disabled', true)

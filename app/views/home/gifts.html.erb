@@ -15,7 +15,7 @@
 			<tr>
 		<% group.each do |gift|  %>
 				<td> <%= gift.name %> </td>
-				<td> <%= check_box_tag gift.checked %>
+				<td>
 				<%= check_box("gift_list", "checked",
 				{
           :checked => gift.checked,

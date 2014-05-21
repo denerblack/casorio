@@ -12,4 +12,13 @@ class HomeController < ApplicationController
 
   def place
   end
+
+	def update
+		gift = GiftList.find params[:gift_list_id]
+	  gift.update(checked: params[:checked])
+
+		respond_to do |format|
+			format.all {render :nothing => true}
+		end
+	end
 end
