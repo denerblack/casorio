@@ -21,5 +21,7 @@ module Casorio
     config.i18n.default_locale = "pt-BR"
 		config.autoload_paths += %W(#{config.root}/lib)
 		config.paths['app/views'] << "app/views/devise"
+		config.assets.paths << Rails.root.join("app", "assets", "fonts")
+		config.assets.paths << Rails.root.join("vendor", "assets", "javascripts")
   end
 end

@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.flexslider
-//= require bootstrap
-//= require jquery.turbolinks
 //= require turbolinks
+//= require custom
+//= require jquery.anchor
+//= require jquery.flexslider-min
+//= require respond.min
+//= require_tree .
