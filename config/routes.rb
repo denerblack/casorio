@@ -1,4 +1,6 @@
 Casorio::Application.routes.draw do
+  resources :photos
+
   resources :events do
 		resources :gift_lists
 	end

@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   layout "weddo"
 	def index
 		@events = Event.all
+		@photos = Photo.all
 		@period = Time.diff(Time.now, Time.new(2014, 10, 18))
   end
 

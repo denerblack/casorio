@@ -20,7 +20,7 @@
 							<i class="icon-heart"></i>
 							<div class="date">
 								<span class="year"><strong>18/10/2014</strong></span><br>
-								<span class="month"><strong><%= "Faltam #{@period[:month]} mese(s), #{@period[:day]} dia(s), #{@period[:hour]} hora(s) e #{@period[:minute]} minuto(s) " %></strong></span><br>
+								<span class="month"><strong><%= "Faltam #{@period[:month]} mese(s), #{@period[:week]} semanas, #{@period[:day]} dia(s), #{@period[:hour]} hora(s) e #{@period[:minute]} minuto(s) " %></strong></span><br>
 							</div>
 						</div>
 					</div>
@@ -140,17 +140,41 @@
 		<!-- Wedding Ends -->
 		<!-- About Ends -->
 		<!-- Photos Starts -->
-		<!--div class="photos">
+		<div class="photos">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-12 col-sm-12">
 						<div class="title">
 							<h3>Fotos</h3>
 						</div>
 
 						<div class="bor"></div>
+						<div id = "myCarousel" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+								<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+								<% @photos.each_with_index do |photo, i| %>
+									<li data-target="#myCarousel" data-slide-to="<%= i + 1%>"></li>
+								<% end %>
+							</ol>
+							<div class="carousel-inner">
+									<div class="item active">
+										<img src="assets/mainback.jpg" alt="" class="img-responsive" />
+									</div>
+								<% @photos.each do |photo| %>
+									<div class="item">
+										<%= image_tag photo.image.url(:large) %>
+									</div>
+								<% end %>
+							</div>
+							<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    						<span class="glyphicon glyphicon-chevron-left"></span>
+  						</a>
+  						<a class="right carousel-control" href="#myCarousel" data-slide="next">
+    						<span class="glyphicon glyphicon-chevron-right"></span>
+  						</a>
+						</div>
 
-						<div class="flexslider">
+						<!--div class="flexslider">
 						  <ul class="slides">
 							<li>
 							  <img src="assets/1.jpg" alt="" class="img-responsive" />
@@ -165,16 +189,15 @@
 							  <img src="assets/4.jpg" alt="" class="img-responsive" />
 							</li>
 						  </ul>
-						</div>
+						</div-->
 
-					</div>
+						</div>
 
 				</div>
 				<a name="photos" id="photos"></a>
-				<hr>
 
 			</div>
-		</div -->
+		</div>
 
 		<!--Photo Ends-->
 		<!-- RSVP Starts -->

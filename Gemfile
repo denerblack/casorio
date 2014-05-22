@@ -25,7 +25,8 @@ gem 'coffee-rails', '~> 4.0.0'
 #  gem 'bootstrap-sass', '~> 3.1.1'
   #gem 'rails-assets-bootstrap'
 	gem 'bootstrap-sass'
-	#gem 'flexslider', '~> 2.2.0'
+#	gem 'flexslider', :git => 'https://github.com/constantm/Flexslider-2-Rails-Gem.git'
+#	gem 'flexslider-rails'
 #  gem 'rails-assets-bootswatch'
 	gem 'rails-assets-html5shiv'
 	gem 'rails-assets-respond'
@@ -90,3 +91,4 @@ gem 'time_diff'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "font-awesome-rails"
+gem "paperclip", "~> 4.1"
