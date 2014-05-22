@@ -35,3 +35,5 @@ vendor/vendor
 Gemfile.lock
 .sass-cache/
 public/assets/
+.ruby-gemset
+.ruby-version

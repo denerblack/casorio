@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.1.1'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
@@ -18,16 +19,23 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 #group :assets do
-  gem 'therubyracer', platforms: :ruby
-#  gem 'less-rails'
-  gem 'twitter-bootstrap-rails'
-  gem 'bootstrap-sass', '~> 3.1.1'
-  gem "rails-bootstrap-helpers"
+  #gem 'therubyracer', platforms: :ruby
+  #gem 'less-rails'
+  #gem 'twitter-bootstrap-rails'
+#  gem 'bootstrap-sass', '~> 3.1.1'
+  #gem 'rails-assets-bootstrap'
+	gem 'bootstrap-sass'
+	#gem 'flexslider', '~> 2.2.0'
+#  gem 'rails-assets-bootswatch'
+	gem 'rails-assets-html5shiv'
+	gem 'rails-assets-respond'
+#  gem "rails-bootstrap-helpers"
+  gem 'bootstrap-x-editable-rails'
   #gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
   #                                :github => 'anjlab/bootstrap-rails'
-  gem 'twitter-bootswatch-rails', '~> 3.0.1'
-  gem 'twitter-bootswatch-rails-fontawesome', '~> 4.0'
-  gem 'twitter-bootswatch-rails-helpers'
+#  gem 'twitter-bootswatch-rails', '~> 3.0.1'
+#  gem 'twitter-bootswatch-rails-fontawesome', '~> 4.0'
+#  gem 'twitter-bootswatch-rails-helpers'
 #end
 
 group :production do
@@ -44,7 +52,7 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-gem 'jquery-turbolinks'
+#gem 'jquery-turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -82,4 +90,3 @@ gem 'time_diff'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "font-awesome-rails"
-gem 'flexslider'

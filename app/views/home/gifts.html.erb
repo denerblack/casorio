@@ -16,6 +16,15 @@
 		<% group.each do |gift|  %>
 				<td> <%= gift.name %> </td>
 				<td>
+					<a href="#" data-disabled="<%= !gift.guest_name.nil?%>"
+						data-xeditable="true"
+						data-pk="<%= gift.id %>"
+						data-model="gift_list"
+						data-name="guest_name"
+						data-url="<%= update_checked_gift_list_url(gift_list_id: gift.id) %>"
+						data-title="Seu nome">
+							<%= gift.guest_name.nil? ? "Nenhum" : gift.guest_name%>
+					</a>
 				<%= check_box("gift_list", "checked",
 				{
           :checked => gift.checked,

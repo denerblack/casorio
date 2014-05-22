@@ -3,9 +3,33 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $('.checked').each ->
-    if $(this).attr('checked') == 'checked'
-      $(this).attr('disabled', true)
+  #$('.editable').each ->
+#    console.log($(this))
+    #if $(this).attr('checked') == 'checked'
+    # $(this).attr('disabled', true)
+
+#  $('.editable').editable {
+#    type: 'text',
+#    title: 'Seu nome',
+#    pk: 1,
+#    placement: 'top',
+#    success: (response, newValue) -> {
+#      userModel.set('a', newValue)
+#    }
+#  }
+  $("[data-xeditable=true]").each ->
+    $(@).editable
+      ajaxOptions:
+        type: "PUT"
+        dataType: "json"
+        params: (params) ->
+          railsParams = {}
+          railsParams[$(@).data("model")] = {}
+          railsParams[$(@).data("model")][params.name] = params.value
+          console.log(params)
+
+          return railsParams
+
 
 $(document).on "change", ".checked", ->
   $this = $(this)
@@ -14,3 +38,5 @@ $(document).on "change", ".checked", ->
     data: { checked: $(this).is(':checked'), gift_list_id: $(this).attr('gift_list_id') }
   })
   $this.attr('disabled', true)
+
+

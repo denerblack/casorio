@@ -17,7 +17,7 @@ Casorio::Application.routes.draw do
 	get "dashboard/gifts/:event_id" => "dashboard#gifts", as: "dashboard_gifts"
 	get 'home' => 'home#index', as: "home"
 	get "home/gifts/:event_id" => "home#gifts", as: "home_gifts"
-	get 'home/update/:gift_list_id' => 'home#update', as: "update_checked_gift_list"
+	put 'home/update/:gift_list_id' => 'home#update', as: "update_checked_gift_list"
 
 
 

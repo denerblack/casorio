@@ -13,8 +13,13 @@
 		<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
 
+		<%#= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%#= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+    <%= csrf_meta_tags %>
 		<!-- Styles -->
 		<!-- Bootstrap CSS -->
 		<link rel="shortcut icon" href="#">
@@ -68,5 +73,8 @@
 			</div>
 		<!--Footer Ends -->
 		<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span>
+		<!-- FlexSlider -->
+		<!-- jQuery Anchor Plugin -->
+		<!-- Respond JS for IE8 -->
 	</body>
 </html>

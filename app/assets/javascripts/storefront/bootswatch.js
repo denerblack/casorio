@@ -1,3 +1,0 @@
-// Storefront
-// Bootswatch
-// bootswatch.js

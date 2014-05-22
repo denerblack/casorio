@@ -13,12 +13,29 @@ class HomeController < ApplicationController
   def place
   end
 
-	def update
-		gift = GiftList.find params[:gift_list_id]
-	  gift.update(checked: params[:checked])
+#	def update
+#		gift = GiftList.find params[:gift_list_id]
+#		puts gift.to_json
+#		puts params
+	  #gift.update(checked: params[:checked])
+#	  gift.update!(guest_name: params[:gift_list][:title])
 
-		respond_to do |format|
-			format.all {render :nothing => true}
-		end
+#		respond_to do |format|
+#			format.all {render :nothing => true}
+#		end
+#	end
+
+  def update
+		@gift = GiftList.find params[:gift_list_id]
+
+  	respond_to do |format|
+    	if @gift.update(guest_name: params[:gift_list][:guest_name])
+        format.html { redirect_to @gift, notice: 'Post was successfully updated.' }
+      	format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+      	format.json { render json: @gift.errors, status: :unprocessable_entity }
+     	end
+    end
 	end
 end
