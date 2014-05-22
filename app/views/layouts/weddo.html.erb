@@ -43,7 +43,7 @@
 						<li><a href="/#home" class="anchorLink">Home</a></li>
 						<!--li><a href="#about" class="anchorLink">About</a></li-->
 						<li><a href="/#wedding" class="anchorLink">Eventos</a></li>
-						<li><a href="#photos" class="anchorLink">Fotos</a></li>
+						<li><a href="/#photos" class="anchorLink">Fotos</a></li>
 						<% if user_signed_in? %>
 							<li><a href="/dashboard" >Ir para Admin</a></li>
 							<li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
@@ -72,7 +72,7 @@
 				</div>
 			</div>
 		<!--Footer Ends -->
-		<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span>
+		<span class="totop"><a href="/#home" class="anchorLink"><i class="icon-chevron-up"></i></a></span>
 		<!-- FlexSlider -->
 		<!-- jQuery Anchor Plugin -->
 		<!-- Respond JS for IE8 -->

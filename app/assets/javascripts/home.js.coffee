@@ -4,6 +4,7 @@
 
 
 $ ->
+
   #$('.editable').each ->
 #    console.log($(this))
     #if $(this).attr('checked') == 'checked'
@@ -40,4 +41,10 @@ $(document).on "change", ".checked", ->
   })
   $this.attr('disabled', true)
 
+
+$(document).on "click", 'a[href*=#]:not([href=#])', ->
+  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) 
+    target = $(this.hash);    
+    $('html,body').animate scrollTop: target.offset().top, 1000
+    return false;
 
