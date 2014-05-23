@@ -5,7 +5,7 @@ class GiftListsController < ApplicationController
   # GET /gift_lists
   # GET /gift_lists.json
   def index
-		@gift_lists = GiftList.page(params[:page]).per(2)
+		@gift_lists = GiftList.page(params[:page]).per(10)
   end
 
   # GET /gift_lists/1
