@@ -92,3 +92,4 @@ gem 'time_diff'
 # gem 'debugger', group: [:development, :test]
 gem "font-awesome-rails"
 gem "paperclip", "~> 4.1"
+gem 'simple_form'
