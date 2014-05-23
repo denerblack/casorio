@@ -18,8 +18,6 @@
         <td><%= link_to gift_list.id, event_gift_list_path(@event, gift_list) %></td>
         <td><%= gift_list.name %></td>
         <td><%= gift_list.brand %>
-				<a href="#" data-xeditable="true" data-pk="<%= gift_list.id %>" data-model="post" data-name="title" data-url="<%= update_checked_gift_list_path(gift_list_id: gift_list.id) %>" data-title="Enter title">Seu nome</a>
-				</td>
         <td>
           <% #gift_list.buscape_info.each do |product| %>
             <%#=product.name %>
@@ -39,6 +37,9 @@
       </tr>
     <% end %>
   </tbody>
+	<tfoot>
+		<th><td colspan=5 class="text-center"><%= paginate @gift_lists %></td></th>
+	</tfoot>
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),

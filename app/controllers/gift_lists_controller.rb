@@ -5,7 +5,7 @@ class GiftListsController < ApplicationController
   # GET /gift_lists
   # GET /gift_lists.json
   def index
-    @gift_lists = GiftList.all
+		@gift_lists = GiftList.page(params[:page]).per(2)
   end
 
   # GET /gift_lists/1
@@ -58,7 +58,7 @@ class GiftListsController < ApplicationController
   def destroy
     @gift_list.destroy
     respond_to do |format|
-      format.html { redirect_to gift_lists_url }
+      format.html { redirect_to event_gift_lists_url }
       format.json { head :no_content }
     end
   end

@@ -277,10 +277,15 @@ pt-BR:
       expense: Despesa
       preparation: Preparativo
       gift_list: Presente
+    weddo_admin:
+      guest: Convidado
+      expense: Despesa
+      preparation: Preparativo
+      gift_list: Presente
   views:
     pagination:
-      previous: "<"
-      next: ">"
-      last: ">|"
-      first: "|<"
+      previous: anterior
+      next: próxima
+      last: última
+      first: primeira
       truncate: "..."
