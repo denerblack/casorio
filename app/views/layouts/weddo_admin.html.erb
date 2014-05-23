@@ -70,7 +70,9 @@
         <% if user_signed_in? %>
 						<span class="label label-danger">Logado como <strong><%= current_user.email %></strong></span>
 						<% end %>
-		<%= yield %>
+    <div class="container theme-showcase">
+			<%= yield %>
+    </div> <!-- /container -->
 		<!--Footer Starts -->
 			<div class="footer">
 				<div class="container">

@@ -1,37 +1,37 @@
 <%= form_for @guest, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :user_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :user_id, options_from_collection_for_select(User.all, :id, :email, current_user.id), :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :user_id, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+			<%= f.select :user_id, options_from_collection_for_select(User.all, :id, :email, current_user.id), {include_blank: t('.select')}, :class => 'form-control' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= f.text_field :name, :class => 'form-control' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :companions_amount, :class => 'control-label' %>
-   <div class="controls">
-      <%= f.number_field :companions_amount, :class => 'number_field' %>
+  <div class="form-group">
+    <%= f.label :companions_amount, :class => 'col-sm-2 control-label' %>
+   <div class="col-sm-6">
+      <%= f.number_field :companions_amount, :class => 'form-control' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :children_amount, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :children_amount, :class => 'number_field' %>
+  <div class="form-group">
+    <%= f.label :children_amount, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= f.number_field :children_amount, :class => 'form-control' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :phone_number, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :phone_number, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :phone_number, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+			<%= f.text_field :phone_number, :class => 'form-control' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :confirmed, :class => 'control-label' %>
-    <div class="controls">
+  <div class="form-group">
+    <%= f.label :confirmed, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
       <%= f.check_box :confirmed, :class => 'check_box' %>
     </div>
   </div>

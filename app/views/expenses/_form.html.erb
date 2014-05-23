@@ -1,45 +1,49 @@
 <%= form_for @expense, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= f.text_field :name, class:  'form-control' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :unit, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :unit, options_for_select(I18n.t(Expense::UNITIES), selected: @expense.unit), {include_blank: t('.select'), :class => 'text_field'} %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :amount, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :amount, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :unit_value, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :unit_value, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= label_tag 'total', t('.total'), :class => 'control-label' %>
-    <div class="controls">
-      <%= text_field_tag 'total', @expense.total,  disabled: true, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :contact_info, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :contact_info, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :unit, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+			<%= f.select :unit, options_for_select(I18n.t(Expense::UNITIES), selected: @expense.unit), {include_blank: t('.select')}, :class => 'form-control' %>
     </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <div class="form-group">
+    <%= f.label :amount, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= f.number_field :amount, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :unit_value, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= f.text_field :unit_value, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'total', t('.total'), :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= text_field_tag 'total', @expense.total,  disabled: true, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_info, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= f.text_area :contact_info, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+		<div class="col-sm-2">
+			<%= f.submit nil, :class => 'btn btn-primary' %>
+		</div>
+		<div class="col-sm-2">
+			<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 expenses_path, :class => 'btn' %>
+		</div>
   </div>
 <% end %>
