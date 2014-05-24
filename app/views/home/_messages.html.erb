@@ -1,0 +1,54 @@
+		<div class="rsvp">
+			<div class="container">
+				<div class="title">
+							<h3>Mensagens</h3>
+				</div>
+				<div class="bor"></div>
+
+				<div class="row">
+					<div class="col-md-3 col-sm-3">
+						<div class="heart">
+							<i class="icon-heart"></i>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="well">
+							<p>Mande seu recado para nós</p>
+							<%= render partial: "shared/flash_messages", flash: flash %>
+							<%= form_tag(messages_path, html: {class: "form-horizontal", role: "form"} ) do |f| %>
+							  <div class="form-group">
+									<div class="col-md-9">
+										<%= label_tag t('.message')  %>
+										<%= text_area_tag "message[:text]", nil, class: "form-control" %>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-9">
+										<%= label_tag :author %>
+										<%= text_field_tag "message[:author]", nil, class: "form-control" %>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-9">
+										<%= label_tag :email%>
+										<%= text_field_tag "message[:email]", nil, class: "form-control" %>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-9 col-md-offset-3">
+										<%= submit_tag "Enviar", class: "btn btn-danger" %>
+									</div>
+								</div>
+							<% end %>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<div class="heart">
+							<i class="icon-heart"></i>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+

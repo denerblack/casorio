@@ -289,3 +289,9 @@ pt-BR:
       last: última
       first: primeira
       truncate: "..."
+  home:
+    messages:
+      message: Mensagem
+      author: Autor
+      email: Email
+

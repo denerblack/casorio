@@ -335,6 +335,7 @@ hr{
 
 .rsvp .well{
 	padding:20px;
+	height: 300px;
 }
 
 .rsvp .well p{
@@ -421,6 +422,10 @@ hr{
 		font-size:48px;
 		line-height:60px;
 	}
+}
+
+.notice {
+  color: green;
 }
 
 /* Tablets */

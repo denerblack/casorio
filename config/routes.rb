@@ -1,4 +1,6 @@
 Casorio::Application.routes.draw do
+  resources :messages
+
   resources :photos
 
   resources :events do

@@ -1,0 +1,63 @@
+		<div class="wedding">
+
+			<div class="container">
+				<div class="title">
+					<h3>Eventos, informações e listas de presentes</h3>
+				</div>
+				<div class="bor"></div>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+
+						<div class="well">
+							<% @events.each do |event| %>
+								<h3><i class="icon-star"></i> <%=event.name %></h3>
+								<p><%=event.address %>
+								</p>
+								<p><%="Dia #{event.date.strftime("%d/%m/%Y")} " %></p>
+								<%= link_to "Ver lista de presentes", home_gifts_path(event.to_param), data: {no_turbolink: true} %></p>
+								<a href="#">Como chegar</a>
+							<% end %>
+						</div>
+					</div>
+					<!-- div class="col-md-4 col-sm-4">
+						<div class="well">
+							 <h3><i class="icon-glass"></i> Wedding Party</h3>
+							<p>Sed justo dui, scelerisque ut consectetur vel, eleifend id erat. Morbi auctor adipiscing tempor. Phasellus rutrum aliquet.</p>
+							<img src="assets/wedding.jpg" alt="" class="img-responsive"/>
+							<h5>Ring Bearer</h5>
+							<p>John Kanan</p>
+							<h5>Bridesmaids:</h5>
+							<p>Nulla facilisi. Sed justo dui, scelerisque ut consectetur vel, eleifend id erat. Morbi auctor adipiscing tempor. Phasellus condimentum rutrum aliquet.</p>
+							<h5>Groomsmen:</h5>
+							<p>Nulla facilisi. Sed justo dui, scelerisque ut consectetur vel, eleifend id erat. Morbi auctor adipiscing tempor. Phasellus condimentum rutrum aliquet.</p>
+						</div>
+					</div -->
+					<!-- div class="col-md-4 col-sm-4">
+						<div class="well">
+							<h3><i class="icon-home"></i> Accomodations</h3>
+							<a href="#">Royal Church</a>
+							<p>12, New Charka Road
+								New York City, NY 43423
+								123) 456-7890
+							</p>
+							<a href="#">Get Direction</a>
+							<hr>
+							 <h3><i class="icon-truck"></i> Reception</h3>
+							 <img src="assets/car.jpg" alt="" class="img-responsive"/>
+							<a href="#">Royal Church</a>
+							<p>12, New Charka Road
+								New York City, NY 43423
+								123) 456-7890
+							</p>
+							<a href="#">Get Direction</a>
+						</div>
+					</div -->
+				</div>
+				<a name="photos" id="photos"></a>
+				<hr>
+
+			</div>
+
+		</div>
+
