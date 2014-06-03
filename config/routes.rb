@@ -12,8 +12,17 @@ Casorio::Application.routes.draw do
   resources :expenses
 
   #devise_for :admins
-  devise_for :users, :controllers => { :registrations => "registrations" }
+  #devise_for :users, :controllers => { :registrations => "registrations" }
   #devise_for :users
+	#devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+
+  devise_for :users, :skip => [:sessions, :registrations]
+  as :user do
+    get 'signin' => 'devise/sessions#new', :as => :new_user_session
+    post 'signin' => 'devise/sessions#create', :as => :user_session
+    delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+
   resources :guests
 
   root :to => "home#index"
