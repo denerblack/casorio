@@ -34,7 +34,7 @@
 		<% end %>
 	</tbody>
 </table>
-<div>
+<div data-no-turbolink>
 	<%= paginate @gifts %>
   <%= link_to t('.back', :default => t("helpers.links.back")),
               home_path, :class => 'btn' %>
