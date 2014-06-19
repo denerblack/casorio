@@ -1,6 +1,6 @@
 class GiftListsController < ApplicationController
   before_action :set_gift_list, only: [:show, :edit, :update, :destroy]
-	before_action :set_event, only: [:index, :new, :edit, :show, :update]
+	before_action :set_event, only: [:index, :new, :edit, :show, :update, :create]
 
   # GET /gift_lists
   # GET /gift_lists.json
@@ -19,7 +19,7 @@ class GiftListsController < ApplicationController
 
   # GET /gift_lists/new
   def new
-    @gift_list = GiftList.new
+		@gift_list = GiftList.new(event_id: @event.to_param)
   end
 
   # GET /gift_lists/1/edit
@@ -33,7 +33,7 @@ class GiftListsController < ApplicationController
 
     respond_to do |format|
       if @gift_list.save
-        format.html { redirect_to @gift_list, notice: 'Gift list was successfully created.' }
+				format.html { redirect_to event_gift_list_url(@event.to_param, @gift_list), notice: 'Gift list was successfully created.' }
         format.json { render action: 'show', status: :created, location: @gift_list }
       else
         format.html { render action: 'new' }
@@ -74,7 +74,7 @@ class GiftListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gift_list_params
-      params.require(:gift_list).permit(:name, :brand, :event_id)
+      params.require(:gift_list).permit(:name, :brand, :event_id, :guest_name)
     end
 
 		def set_event

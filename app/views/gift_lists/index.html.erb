@@ -51,7 +51,7 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_event_gift_list_path,
+            new_event_gift_list_path(@event),
             :class => 'btn btn-primary' %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
             events_path,
