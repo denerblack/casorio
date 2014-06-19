@@ -4,7 +4,9 @@ Casorio::Application.routes.draw do
   resources :photos
 
   resources :events do
-		resources :gift_lists
+		resources :gift_lists do
+			get 'index/:search' => 'gift_lists#index'
+		end
 	end
 
   get "dashboard/index"

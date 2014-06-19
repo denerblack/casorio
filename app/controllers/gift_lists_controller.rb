@@ -5,7 +5,11 @@ class GiftListsController < ApplicationController
   # GET /gift_lists
   # GET /gift_lists.json
   def index
-		@gift_lists = GiftList.page(params[:page]).per(20)
+		if params[:search].present?
+			@gift_lists = GiftList.search(params[:event_id], params[:search]).page(params[:page]).per(20)
+		else
+			@gift_lists = GiftList.page(params[:page]).per(20)
+		end
   end
 
   # GET /gift_lists/1
