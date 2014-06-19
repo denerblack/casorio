@@ -250,6 +250,7 @@ pt-BR:
       gift_list:
         name: Nome
         brand: Marca
+        guest_name: Convidado
         where: Onde
   guests:
     index:
