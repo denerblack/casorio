@@ -13,5 +13,6 @@ class DashboardController < ApplicationController
 	def gifts
 		@gifts = GiftList.where(event_id: params[:event_id]).page(params[:page]).per(10)
 		@event = Event.find(params[:event_id])
+		send_data @event.generate_gift_lists_pdf.render, :filename => "x.pdf", :type => "application/pdf", :disposition => 'inline'
 	end
 end

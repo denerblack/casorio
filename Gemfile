@@ -93,3 +93,4 @@ gem 'time_diff'
 gem "font-awesome-rails"
 gem "paperclip", "~> 4.1"
 gem 'simple_form'
+gem 'prawn'

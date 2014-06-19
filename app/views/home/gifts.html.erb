@@ -4,6 +4,7 @@
 	<h3><%=t '.title', :default => model_class.model_name.human.pluralize %> <%= @event.name %></h3>
 </div>
 </div>
+<p><%=link_to "Lista em pdf", dashboard_gifts_path(format: "pdf") %> </p>
 <table class="table table-striped">
 	<thead>
 		<tr>
