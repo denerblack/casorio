@@ -2,7 +2,7 @@ class GiftList < ActiveRecord::Base
   require 'rest_client'
   require 'xmlsimple'
 
-	scope :search, -> event_id, search { where('event_id = ? and name like ?', event_id, "%#{search}%") }
+	scope :search, -> event_id, search { where('event_id = ? and lower(name) like ?', event_id, "%#{search.downcase}%") }
 
 
   Product = Struct.new(:name, :image, :minimum_price, :maximum_price)
