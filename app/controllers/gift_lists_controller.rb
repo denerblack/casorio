@@ -1,6 +1,6 @@
 class GiftListsController < ApplicationController
   before_action :set_gift_list, only: [:show, :edit, :update, :destroy]
-	before_action :set_event, only: [:index, :new, :edit, :show]
+	before_action :set_event, only: [:index, :new, :edit, :show, :update]
 
   # GET /gift_lists
   # GET /gift_lists.json
@@ -47,7 +47,7 @@ class GiftListsController < ApplicationController
   def update
     respond_to do |format|
       if @gift_list.update(gift_list_params)
-        format.html { redirect_to @gift_list, notice: 'Gift list was successfully updated.' }
+				format.html { redirect_to event_gift_list_url(@event.to_param, @gift_list), notice: 'Gift list was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
