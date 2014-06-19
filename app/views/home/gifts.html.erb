@@ -16,7 +16,7 @@
 		<% group.each do |gift|  %>
 				<td> <%= gift.name %> </td>
 				<td>
-					<a href="#" data-disabled="<%= !gift.guest_name.nil? and !gift.guest_name.eql? ""%>"
+					<a href="#" data-disabled="<%= (!gift.guest_name.nil? and !gift.guest_name.eql? "" and !gift.guest_name.eql? "Nenhum")%>"
 						data-xeditable="true"
 						data-pk="<%= gift.id %>"
 						data-model="gift_list"
