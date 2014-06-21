@@ -4,3 +4,14 @@
     <%= message %>
   </div>
 <% end %>
+<% if @event.errors.any? %>
+  <div id="error_explanation!" class="alert alert-danger">
+  <button class="close" data-dismiss="alert">×</button>
+    <%= pluralize(@event.errors.count, "erro") %> não permitiu ser salvo:
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -67,10 +67,11 @@
 
 			</div>
 		</div>
-        <% if user_signed_in? %>
-						<span class="label label-danger">Logado como <strong><%= current_user.email %></strong></span>
-						<% end %>
+    <% if user_signed_in? %>
+			<span class="label label-danger">Logado como <strong><%= current_user.email %></strong></span>
+		<% end %>
     <div class="container theme-showcase">
+			<%= render partial: "shared/flash_messages", flash: flash %>
 			<%= yield %>
     </div> <!-- /container -->
 		<!--Footer Starts -->

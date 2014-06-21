@@ -4,6 +4,7 @@ class GiftList < ActiveRecord::Base
 
 	scope :search, -> event_id, search { where('event_id = ? and lower(name) like ?', event_id, "%#{search.downcase}%") }
 
+	validates_presence_of :name
 
   Product = Struct.new(:name, :image, :minimum_price, :maximum_price)
 

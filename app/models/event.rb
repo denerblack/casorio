@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
 	has_many :gift_lists
+	validates_presence_of :name, :date
 
 	def generate_gift_lists_pdf
 		pdf = Prawn::Document.new

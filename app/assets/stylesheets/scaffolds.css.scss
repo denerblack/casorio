@@ -40,10 +40,18 @@ div {
 }
 
 .field_with_errors {
-  padding: 2px;
+  //padding: 2px;
   background-color: red;
-  display: table;
+  //display: table;
 }
+
+.field_with_errors input {
+    //width: 150px;
+    //display: block;
+    //margin-bottom: 10px;
+    background-color: #FFEBE6;
+}
+
 
 #error_explanation {
   width: 450px;

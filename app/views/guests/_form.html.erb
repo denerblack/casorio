@@ -1,4 +1,5 @@
 <%= form_for @guest, :html => { :class => 'form-horizontal' } do |f| %>
+	<%= render partial: "shared/flash_messages", flash: flash %>
   <div class="form-group">
     <%= f.label :user_id, :class => 'col-sm-2 control-label' %>
     <div class="col-sm-6">
