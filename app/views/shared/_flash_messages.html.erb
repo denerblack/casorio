@@ -4,7 +4,7 @@
     <%= message %>
   </div>
 <% end %>
-<% if @event.errors.any? %>
+<% if !@event.nil? and @event.errors.any? %>
   <div id="error_explanation!" class="alert alert-danger">
   <button class="close" data-dismiss="alert">×</button>
     <%= pluralize(@event.errors.count, "erro") %> não permitiu ser salvo:
