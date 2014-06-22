@@ -94,5 +94,6 @@ gem "paperclip", "~> 4.1"
 gem 'simple_form'
 gem 'prawn'
 gem 'modernizr_rails'
-gem 'rails-assets-bootstrap-datepicker'
+#gem 'rails-assets-bootstrap-datepicker'
+gem 'bootstrap-datepicker-rails'
 
