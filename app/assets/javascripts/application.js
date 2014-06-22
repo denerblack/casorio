@@ -16,4 +16,7 @@
 //= require bootstrap
 //= require bootstrap3-editable/bootstrap-editable
 //= require chartkick
+//= require modernizr
+//= require bootstrap-datepicker
 //= require_tree .
+

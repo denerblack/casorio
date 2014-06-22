@@ -46,7 +46,6 @@ group :production do
 #  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
 #  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -94,3 +93,6 @@ gem "font-awesome-rails"
 gem "paperclip", "~> 4.1"
 gem 'simple_form'
 gem 'prawn'
+gem 'modernizr_rails'
+gem 'rails-assets-bootstrap-datepicker'
+
