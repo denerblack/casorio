@@ -229,6 +229,9 @@ pt-BR:
       expense:
         one: Despesa
         other: Despesas
+      event:
+        one: Evento
+        other: Eventos
     attributes:
       guest:
         name: "Nome"
