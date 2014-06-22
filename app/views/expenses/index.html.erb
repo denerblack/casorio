@@ -21,14 +21,15 @@
         <td><%= expense.amount %></td>
         <td><%= number_to_currency expense.unit_value %></td>
         <td><%= expense.unit %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_expense_path(expense), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+				<td>
+					<%= link_to "<i class='glyphicon glyphicon-search' alt='Ver'></i>".html_safe, expense %>
+          <%= link_to "<i class='glyphicon glyphicon-edit' alt='Ver'></i>".html_safe,
+                      edit_expense_path(expense), :class => '' %>
+					<%= link_to "<i class='glyphicon glyphicon-remove'></i>".html_safe,
                       expense_path(expense),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :class => '' %>
         </td>
       </tr>
     <% end %>

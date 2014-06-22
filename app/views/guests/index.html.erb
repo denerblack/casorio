@@ -30,13 +30,15 @@
         <td><%= guest.children_amount %></td>
         <td><%= guest.confirmed ? 'Sim' : 'Não' %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_guest_path(guest), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      guest_path(guest),
+					<%= link_to "<i class='glyphicon glyphicon-search' alt='Ver'></i>".html_safe, guest_path(guest), title: "Ver" %>
+					<%= link_to "<i class='glyphicon glyphicon-edit'></i>".html_safe,
+                      edit_guest_path(guest), :class => '', title: "Editar" %>
+					<%= link_to "<i class='glyphicon glyphicon-remove'></i>".html_safe,
+                    guest_path(guest),
                       :method => :delete,
+											title: "Excluir",
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :class => '' %>
         </td>
       </tr>
     <% end %>

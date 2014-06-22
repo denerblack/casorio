@@ -24,10 +24,10 @@
         <td><%= event.name %></td>
         <td><%= event.description %></td>
         <td><%= event.address %></td>
-        <td><%= event.date.strftime("%d/%m/%Y") %></td>
-        <td><%= link_to t('.show', :default => t("helpers.links.show")), event, class: 'btn btn-default btn-xs'  %>
-        <%= link_to t('.show', :default => t("helpers.links.edit")), edit_event_path(event), class: 'btn btn-primary btn-xs'  %>
-        <%= link_to t('.show', :default => t("helpers.links.destroy")), event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+        <td><%= event.date.strftime("%d/%m/%Y") unless event.date.nil?%></td>
+				<td><%= link_to "<i class='glyphicon glyphicon-search' alt='Ver'></i>".html_safe, event %>
+				<%= link_to "<i class='glyphicon glyphicon-edit'></i>".html_safe, edit_event_path(event) %>
+				<%= link_to "<i class='glyphicon glyphicon-remove'></i>".html_safe, event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
