@@ -5,7 +5,11 @@ class GuestsController < ApplicationController
   # GET /guests
   # GET /guests.json
   def index
-		@guests = Guest.page(params[:page]).per(10)
+		if params[:search].present?
+			@guests = Guest.by_name(params[:search]).page(params[:page]).per(10)
+		else
+			@guests = Guest.page(params[:page]).per(10)
+		end
   end
 
   # GET /guests/1
