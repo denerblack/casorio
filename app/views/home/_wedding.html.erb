@@ -16,7 +16,7 @@
 								</p>
 								<p><%="Dia #{event.date.strftime("%d/%m/%Y") unless event.date.nil?} " %></p>
 								<%= link_to "Ver lista de presentes", home_gifts_path(event.to_param), data: {no_turbolink: true} %></p>
-								<a href="#">Como chegar</a>
+								<a target = "_blank" href="<%= event.url_map%>">Como chegar</a>
 							<% end %>
 						</div>
 					</div>
