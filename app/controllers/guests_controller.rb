@@ -5,11 +5,22 @@ class GuestsController < ApplicationController
   # GET /guests
   # GET /guests.json
   def index
-		if params[:search].present?
-			@guests = Guest.by_name(params[:search]).page(params[:page]).per(10)
-		else
-			@guests = Guest.page(params[:page]).per(10)
-		end
+		#@guests = []
+#		if params[:search].present?
+
+			#@guests = Guest.by_name(params[:search][:name]).page(params[:page]).per(10) if params[:search][:name].present?
+#			by_name = guests = Guest.by_name(params[:search][:name]) if params[:search][:name].present?
+#			by_user_id = Guest.where(user_id: params[:search][:user_id]) if params[:search][:user_id].present?
+#			@guests = (by_name.nil? ? by_name.where(user_id: params[:search][:user_id]) : Guest.where(user_id: params[:search][:user_id])).page(params[:page]).per(10)
+			#@guests.page(params[:page]).per(10)
+#		else
+#			@guests = Guest.page(params[:page]).per(10)
+#		end
+			@guests = Guest.all #page(params[:page]).per(10)
+			@guests = @guests.by_name(params[:name]) if params[:name].present?
+			@guests = @guests.where(user_id: params[:user_id]) if params[:user_id].present?
+			@guests = @guests.page(params[:page]).per(10)
+		#@guests
   end
 
   # GET /guests/1
