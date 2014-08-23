@@ -5,23 +5,16 @@ class GuestsController < ApplicationController
   # GET /guests
   # GET /guests.json
   def index
-		#@guests = []
-#		if params[:search].present?
-
-			#@guests = Guest.by_name(params[:search][:name]).page(params[:page]).per(10) if params[:search][:name].present?
-#			by_name = guests = Guest.by_name(params[:search][:name]) if params[:search][:name].present?
-#			by_user_id = Guest.where(user_id: params[:search][:user_id]) if params[:search][:user_id].present?
-#			@guests = (by_name.nil? ? by_name.where(user_id: params[:search][:user_id]) : Guest.where(user_id: params[:search][:user_id])).page(params[:page]).per(10)
-			#@guests.page(params[:page]).per(10)
-#		else
-#			@guests = Guest.page(params[:page]).per(10)
-#		end
-			@guests = Guest.all #page(params[:page]).per(10)
-			@guests = @guests.by_name(params[:name]) if params[:name].present?
-			@guests = @guests.where(user_id: params[:user_id]) if params[:user_id].present?
-			@guests = @guests.page(params[:page]).per(10)
+		@guests = Guest.all #page(params[:page]).per(10)
+		@guests = @guests.by_name(params[:name]) if params[:name].present?
+		@guests = @guests.where(user_id: params[:user_id]) if params[:user_id].present?
+		@guests = @guests.page(params[:page]).per(10)
 		#@guests
   end
+
+	def guests_pdf
+		send_data Guest.generate_guests_list_pdf.render, :filename => "x.pdf", :type => "application/pdf", disposition: 'inline', stream: 'true', buffer_size: '4096'
+	end
 
   # GET /guests/1
   # GET /guests/1.json
@@ -85,6 +78,6 @@ class GuestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def guest_params
-      params.require(:guest).permit(:name, :companions_amount, :children_amount, :confirmed)
+      params.require(:guest).permit(:name, :companions_amount, :children_amount, :confirmed, :user_id)
     end
 end

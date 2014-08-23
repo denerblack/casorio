@@ -25,6 +25,8 @@ Casorio::Application.routes.draw do
     delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
+	get 'guests/guests_pdf' => 'guests#guests_pdf', :as => :guests_pdf
+
   resources :guests
 
   root :to => "home#index"

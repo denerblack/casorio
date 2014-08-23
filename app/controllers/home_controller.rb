@@ -16,8 +16,6 @@ class HomeController < ApplicationController
 
 #	def update
 #		gift = GiftList.find params[:gift_list_id]
-#		puts gift.to_json
-#		puts params
 	  #gift.update(checked: params[:checked])
 #	  gift.update!(guest_name: params[:gift_list][:title])
 
